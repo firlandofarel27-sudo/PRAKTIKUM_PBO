@@ -6,6 +6,213 @@
 | Repository | [link] (https://github.com/firlandofarel27-sudo/PRAKTIKUM_PBO) |
 
 # Labs #1 Programming Fundamentals Review
+## Jawaban Soal
+1. Class adalah blueprint atau prototype yang digunakan sebagai dasar untuk membuat object. Sedangkan object adalah hasil instansiasi dari sebuah class yang memiliki state (atribut) dan behaviour (method). Contohnya, Bike merupakan class, sedangkan sepeda tertentu yang dibuat dari class Bike merupakan object.
+2. gear dan brand dapat menjadi atribut karena keduanya merupakan state atau ciri-ciri yang dimiliki oleh object Bike. Brand menunjukkan merek sepeda, sedangkan gear menunjukkan posisi atau jumlah gigi yang dimiliki sepeda. Dalam PBO, state atau ciri-ciri object direpresentasikan sebagai atribut.
+3. Salah satu kelebihan utama PBO adalah program lebih fleksibel dan modular. Perubahan atau penambahan fitur pada suatu bagian program tidak selalu mengganggu keseluruhan program. Selain itu, PBO dapat mengurangi penggunaan kode yang berulang
+4. Ya, diperbolehkan. Dalam Java, beberapa atribut dengan tipe data yang sama dapat dideklarasikan dalam satu baris menggunakan tanda koma.
+5. Karena RoadBike merupakan turunan dari class Bike dengan menggunakan extends Bike. Dengan inheritance, RoadBike otomatis mewarisi atribut dan method yang dimiliki Bike, sehingga atribut seperti brand, speed, dan gear tidak perlu ditulis ulang. RoadBike hanya perlu menambahkan fitur khusus yang belum dimiliki Bike, misalnya tireWidth
+
+## Tugas
+Kode program tugas!
+Kode Kendaraan
+```
+package JOBSHEET1;
+
+public class Kendaraan {
+    String merk;
+    int tahun;
+    int cc;
+    String jenis;
+
+    public void bergerak() {
+        System.out.println("Kendaraan sedang bergerak.");
+    }
+
+    public void berhenti() {
+        System.out.println("Kendaraan berhenti.");
+    }
+
+    public void menyalakanMesin() {
+        System.out.println("menyalakanMesin");
+    }
+
+    public void membunyikanKlakson() {
+        System.out.println("membunyikanKlakson");
+    }
+
+    public void cetakInformasi() {
+        System.out.println("Merk  : " + merk);
+        System.out.println("Tahun : " + tahun);
+        System.out.println("CC    : " + cc );
+        System.out.println("Jenis : " + jenis );
+    }
+}
+
+```
+Kode Motor
+```
+package JOBSHEET1;
+
+public class Motor extends Kendaraan {
+    String merk;
+    int tahun;
+
+    public void bergerak() {
+        System.out.println("Kendaraan sedang bergerak.");
+    }
+
+    public void berhenti() {
+        System.out.println("Kendaraan berhenti.");
+    }
+
+    public void cetakInformasi() {
+        System.out.println("Merk  : " + merk);
+        System.out.println("Tahun : " + tahun);
+        System.out.println("");
+    }
+}
+
+```
+Kode Mobil
+```
+package JOBSHEET1;
+
+public class Mobil extends Kendaraan {
+    int jumlahPintu;
+    String bahanBakar;
+
+    public void menyalakanMesin() {
+        System.out.println("Mesin mobil dinyalakan.");
+    }
+
+    public void membukaPintu() {
+        System.out.println("Pintu mobil dibuka.");
+    }
+
+    public void cetakInformasi() {
+        System.out.println("Merk         : " + merk);
+        System.out.println("Tahun        : " + tahun);
+        System.out.println("Jumlah Pintu : " + jumlahPintu);
+        System.out.println("Bahan Bakar  : " + bahanBakar);
+    }
+}
+
+```
+Kode Laptop
+```
+package JOBSHEET1;
+
+public class Laptop {
+    String merk;
+    int ram;
+
+    public void menyala() {
+        System.out.println("Laptop menyala.");
+    }
+
+    public void menjalankanProgram() {
+        System.out.println("Laptop menjalankan program.");
+    }
+
+    public void cetakInformasi() {
+        System.out.println("Merk : " + merk);
+        System.out.println("RAM  : " + ram + " GB");
+    }
+}
+
+```
+Kode Demo
+```
+package JOBSHEET1;
+
+public class Demo {
+    public static void main(String[] args) {
+
+        // Membuat objek Kendaraan
+        Kendaraan kendaraan = new Kendaraan();
+        kendaraan.merk = "Honda";
+        kendaraan.tahun = 2022;
+
+        System.out.println("=== KENDARAAN ===");
+        kendaraan.cetakInformasi();
+        kendaraan.bergerak();
+        kendaraan.berhenti();
+
+        System.out.println();
+
+        // Membuat objek Motor
+        Motor motor = new Motor();
+        motor.merk = "Yamaha";
+        motor.tahun = 2024;
+        motor.cc = 155;
+        motor.jenis = "Sport";
+
+         System.out.println("=== MOTOR ===");
+        motor.cetakInformasi();
+        motor.menyalakanMesin();
+        motor.membunyikanKlakson();
+
+        System.out.println();
+
+        // Membuat objek Mobil
+        Mobil mobil = new Mobil();
+        mobil.merk = "Toyota";
+        mobil.tahun = 2023;
+        mobil.jumlahPintu = 4;
+        mobil.bahanBakar = "Bensin";
+
+        System.out.println("=== MOBIL ===");
+        mobil.cetakInformasi();
+        mobil.menyalakanMesin();
+        mobil.membukaPintu();
+
+        System.out.println();
+
+        // Membuat objek Laptop
+        Laptop laptop = new Laptop();
+        laptop.merk = "ASUS";
+        laptop.ram = 16;
+
+        System.out.println("=== LAPTOP ===");
+        laptop.cetakInformasi();
+        laptop.menyala();
+        laptop.menjalankanProgram();
+    }
+}
+
+```
+Hasil Runing Kode Program
+```
+=== KENDARAAN ===
+Merk  : Honda
+Tahun : 2022
+CC    : 0
+Jenis : null
+Kendaraan sedang bergerak.
+Kendaraan berhenti.
+
+=== MOTOR ===
+Merk  : Yamaha
+Tahun : 2024
+
+menyalakanMesin
+membunyikanKlakson
+
+=== MOBIL ===
+Merk         : Toyota
+Tahun        : 2023
+Jumlah Pintu : 4
+Bahan Bakar  : Bensin
+Mesin mobil dinyalakan.
+Pintu mobil dibuka.
+
+=== LAPTOP ===
+Merk : ASUS
+RAM  : 16 GB
+Laptop menyala.
+Laptop menjalankan program.
+```
 
 ## Percobaan 1
 
