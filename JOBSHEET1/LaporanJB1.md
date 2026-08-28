@@ -12,7 +12,9 @@
 3. Salah satu kelebihan utama PBO adalah program lebih fleksibel dan modular. Perubahan atau penambahan fitur pada suatu bagian program tidak selalu mengganggu keseluruhan program. Selain itu, PBO dapat mengurangi penggunaan kode yang berulang
 4. Ya, diperbolehkan. Dalam Java, beberapa atribut dengan tipe data yang sama dapat dideklarasikan dalam satu baris menggunakan tanda koma.
 5. Karena RoadBike merupakan turunan dari class Bike dengan menggunakan extends Bike. Dengan inheritance, RoadBike otomatis mewarisi atribut dan method yang dimiliki Bike, sehingga atribut seperti brand, speed, dan gear tidak perlu ditulis ulang. RoadBike hanya perlu menambahkan fitur khusus yang belum dimiliki Bike, misalnya tireWidth
-
+![Langkah 1](<Foto Motor_Tugas.jpeg>)
+![Langkah 2](<Foto Mobil_Tugas.jpeg>)
+![Langkah 3](<Foto Laptop_Tugas.jpeg>)
 ## Tugas
 Kode program tugas!
 Kode Kendaraan
