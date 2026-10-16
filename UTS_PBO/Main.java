@@ -25,3 +25,4 @@ public class Main {
 /// - Bagian Karakter yang saya gunakan adalah terimaDamage karena dari situ damage akan terinput atau dihitung.
 /// - Hitung damage akan di override
 /// - Tidak karena rumusnya berbeda dan menggunakan if else 
+/// SELESAi
